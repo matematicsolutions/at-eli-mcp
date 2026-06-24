@@ -1,0 +1,703 @@
+{
+ "OgdSearchResult": {
+  "OgdDocumentResults": {
+   "Hits": {
+    "@pageNumber": "1",
+    "@pageSize": "10",
+    "#text": "939"
+   },
+   "OgdDocumentReference": [
+    {
+     "Data": {
+      "Metadaten": {
+       "Technisch": {
+        "ID": "JJR_19810212_OGH0002_0120OS00121_8000000_001",
+        "Applikation": "Justiz",
+        "Organ": "OGH",
+        "ImportTimestamp": {
+         "@xsi:nil": "true",
+         "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+        }
+       },
+       "Allgemein": {
+        "Veroeffentlicht": "1997-06-15",
+        "Geaendert": "2026-06-24",
+        "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJR_19810212_OGH0002_0120OS00121_8000000_001"
+       },
+       "Judikatur": {
+        "Dokumenttyp": "Rechtssatz",
+        "Geschaeftszahl": {
+         "item": "12Os121/80; 1Ob658/82; 13Os10/83; 1Ob627/83; 13Os152/84; 3Ob531/88; 12Os80/90; 2Ob45/93; 1Ob91/99k; 9Ob78/99g; 9Ob36/00k; 9Ob147/00h; 2Ob79/00g; 8Ob127/02p; 2Ob120/02i; 2Ob111/03t; 2Ob186/03x; 2Ob7/05a; 1Ob88/07h; 6Ob248/09b; 4Ob8/11x; 9ObA132/10t; 5Ob176/11k; 4Ob200/11g; 4Ob48/16m; 5Ob34/18p; 1Ob170/18h; 7Ob103/19a; 4Ob109/24v; 2Ob77/25z; 8Ob52/26v"
+        },
+        "Normen": {
+         "item": "ABGB §1325 B1"
+        },
+        "Entscheidungsdatum": "2026-05-20",
+        "Schlagworte": "kosmetisch",
+        "EuropeanCaseLawIdentifier": "ECLI:AT:OGH0002:1981:RS0030792",
+        "Justiz": {
+         "Rechtsgebiete": {
+          "item": "Strafrecht"
+         },
+         "Gericht": "OGH",
+         "Rechtssatznummern": {
+          "item": "RS0030792"
+         },
+         "Entscheidungstexte": {
+          "item": [
+           {
+            "Geschaeftszahl": "12 Os 121/80",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1981-02-12",
+            "Anmerkung": "Veröff: SSt 52/5",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19810212_OGH0002_0120OS00121_8000000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 658/82",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1982-12-01",
+            "Anmerkung": "Veröff: EvBl 1983/82 S 326"
+           },
+           {
+            "Geschaeftszahl": "13 Os 10/83",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1983-03-10",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19830310_OGH0002_0130OS00010_8300000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 627/83",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1983-05-11"
+           },
+           {
+            "Geschaeftszahl": "13 Os 152/84",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1984-12-06",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19841206_OGH0002_0130OS00152_8400000_000"
+           },
+           {
+            "Geschaeftszahl": "3 Ob 531/88",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1988-07-13",
+            "Anmerkung": "Veröff: JBl 1989,41",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19880713_OGH0002_0030OB00531_8800000_000"
+           },
+           {
+            "Geschaeftszahl": "12 Os 80/90",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1990-08-30",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19900830_OGH0002_0120OS00080_9000000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 45/93",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1994-06-16",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19940616_OGH0002_0020OB00045_9300000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 91/99k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1999-05-25",
+            "Anmerkung": "Auch; nur: Verletzung im Sinne des § 1325 ABGB ist jede Beeinträchtigung der körperlichen oder geistigen Gesundheit und Unversehrtheit. (T1) Beisatz: Für seelische Schmerzen, die nicht auf einer Verletzung des eigenen Körpers beruhen, steht kein Schmerzengeld zu. (T2); Veröff: SZ 72/91",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19990525_OGH0002_0010OB00091_99K0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 78/99g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1999-11-03",
+            "Anmerkung": "Auch; Beisatz: Auch innere Verletzungen oder Nervenschäden fallen unter den Begriff der Körperverletzung, ebenso massive Einwirkungen in die psychische Sphäre (zB Herbeiführen eines Schocks). Eine psychische Beeinträchtigung, die bloß in Unbehagen und Unlustgefühlen besteht, reicht hingegen für sich nicht aus, um als Verletzung am Körper angesehen oder einer Verletzung gleichgestellt zu werden. (T3) Beisatz: Hier: Längere depressive Reaktion und psychosexuelle Entwicklungsstörung. Damit wird dem Umstand Rechnung getragen, dass die seelische Komponente beim sexuellen Missbrauch gegenüber allfälligen körperlichen Schäden im engeren Sinn häufig noch viel weitreichender und lebensprägender ist. (T4); Veröff: SZ 72/165",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19991103_OGH0002_0090OB00078_99G0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 36/00k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2000-07-12",
+            "Anmerkung": "nur T1; Beis wie T2; Beis wie T3",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20000712_OGH0002_0090OB00036_00K0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 147/00h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2000-07-12",
+            "Anmerkung": "Beis wie T3; Beis wie T4; Beisatz: Hier: Im Verfahren 9 Ob 78/99g handelte es sich um den vom selben Beklagten ebenso sexuell missbrauchten älteren Bruder. (T5)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20000712_OGH0002_0090OB00147_00H0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 79/00g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2001-02-22",
+            "Anmerkung": "Vgl auch; Beisatz: Massive Einwirkungen in die psychische Sphäre sind dann eine körperliche Verletzung im Sinn der angeführten Bestimmungen, wenn sie mit körperlichen Symptomen einhergehen, die als Krankheit anzusehen sind. (T6); Veröff: SZ 74/24",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20010222_OGH0002_0020OB00079_00G0000_000"
+           },
+           {
+            "Geschaeftszahl": "8 Ob 127/02p",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2002-08-29",
+            "Anmerkung": "nur T1; Beis wie T6; Veröff: SZ 2002/110",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20020829_OGH0002_0080OB00127_02P0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 120/02i",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-05-21",
+            "Anmerkung": "nur T1; Beis wie T3; Beis wie T6; Beisatz: Hier: Posttraumatische Belastungsstörung als Folge eines Unfalles, welche Therapien erforderlich macht und Krankheitswert erreicht. (T8)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20030521_OGH0002_0020OB00120_02I0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 111/03t",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-06-12",
+            "Anmerkung": "Auch; Beisatz: Hier: Erkrankung aus dem psychosomatischen Formenkreis, nämlich eine \"Anorexia nervosa\", sowie eine posttraumatische Erlebnisreaktion und Belastungsreaktion. (T9); Veröff: SZ 2003/67",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20030612_OGH0002_0020OB00111_03T0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 186/03x",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-10-30",
+            "Anmerkung": "Vgl auch; Beisatz: Psychische Schmerzen sind grundsätzlich nicht anders zu beurteilen, als körperliche Schmerzen. (T10)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20031030_OGH0002_0020OB00186_03X0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 7/05a",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2005-01-20",
+            "Anmerkung": "Vgl auch; Beisatz: Hier: Zuspruch der Kosten für eine Facelifting-Operation bei aufgrund eines unfallkausalen traumatischen Ereignisses (Tod der Tochter) hervorgerufener außergewöhnlich starken vorzeitigen Alterung der Mutter. (T11); Veröff: SZ 2005/4",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20050120_OGH0002_0020OB00007_05A0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 88/07h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2007-06-26",
+            "Anmerkung": "Auch; nur T1; Veröff: SZ 2007/101",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20070626_OGH0002_0010OB00088_07H0000_000"
+           },
+           {
+            "Geschaeftszahl": "6 Ob 248/09b",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2010-01-14",
+            "Anmerkung": "Vgl; Bem: Hier: Todesangst. (T12)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20100114_OGH0002_0060OB00248_09B0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 8/11x",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-04-12",
+            "Anmerkung": "Vgl auch; Beis ähnlich wie T3; Beis ähnlich wie T6; Veröff: SZ 2011/48",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20110412_OGH0002_0040OB00008_11X0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 ObA 132/10t",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-06-28",
+            "Anmerkung": "Vgl auch",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20110628_OGH0002_009OBA00132_10T0000_000"
+           },
+           {
+            "Geschaeftszahl": "5 Ob 176/11k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-10-07",
+            "Anmerkung": "Vgl; nur T1; Beis wie T3; Beis wie T6; Beisatz: Geruchsbelästigung ohne Krankheitswert durch übergelaufenes Heizöl; Anspruch verneint. (T13); Bem: Mit Auseinandersetzung mit der Lehre und Rechtsprechung. (T14)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20111007_OGH0002_0050OB00176_11K0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 200/11g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-12-20",
+            "Anmerkung": "Auch; Beisatz: Hier: Psychische Beeinträchtigung mit Krankheitswert aufgrund eines Eingriffs in die Intimsphäre einer Unmündigen. (T15)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20111220_OGH0002_0040OB00200_11G0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 48/16m",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2016-03-30",
+            "Anmerkung": "Auch; Beis wie T3; Beisatz: Berücksichtigung des seelischen Ungemachs aufgrund einer abgebrochenen und im Körper verbliebenen Operationsschere als Akzessorium der dadurch bewirkten Körperverletzung. (T16)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20160330_OGH0002_0040OB00048_16M0000_000"
+           },
+           {
+            "Geschaeftszahl": "5 Ob 34/18p",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2018-04-10",
+            "Anmerkung": "Beis wie T6; Beis wie T8; Beis wie T9; Beis wie T10; Beis wie T12",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20180410_OGH0002_0050OB00034_18P0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 170/18h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2018-11-21",
+            "Anmerkung": "Auch; Beis wie T3; Beisatz: Hier: Kein ideeller Schadenersatz für eine durch behauptetes Mobbing verursachte psychische Beeinträchtigung ohne Krankheitswert. (T17)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20181121_OGH0002_0010OB00170_18H0000_000"
+           },
+           {
+            "Geschaeftszahl": "7 Ob 103/19a",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2019-08-28",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20190828_OGH0002_0070OB00103_19A0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 109/24v",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsart": "Ordentliche Erledigung (Sachentscheidung)",
+            "Entscheidungsdatum": "2024-10-22",
+            "Anmerkung": "Anm: Hier: Bloße Angst- und Unlustgefühle aufgrund fehlerhaften Schaumstoffes eines Beatmungsgeräts.",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20241022_OGH0002_0040OB00109_24V0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 77/25z",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2025-11-18",
+            "Anmerkung": "vgl; Beisatz: Hier: Vorabentscheidungsersuchen zu Art 9 lit a der Produkthaftungsrichtlinie (RL 85/374/EWG). (T18)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20251118_OGH0002_0020OB00077_25Z0000_000"
+           },
+           {
+            "Geschaeftszahl": "8 Ob 52/26v",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2026-05-20",
+            "Anmerkung": "Beisatz wie T3; Beisatz wie T8; Beisatz wie T15; Beisatz wie T17",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20260520_OGH0002_0080OB00052_26V0000_000"
+           }
+          ]
+         }
+        }
+       }
+      },
+      "Dokumentliste": {
+       "ContentReference": {
+        "ContentType": "MainDocument",
+        "Name": "Hauptdokument",
+        "Urls": {
+         "ContentUrl": [
+          {
+           "DataType": "Xml",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19810212_OGH0002_0120OS00121_8000000_001/JJR_19810212_OGH0002_0120OS00121_8000000_001.xml"
+          },
+          {
+           "DataType": "Html",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19810212_OGH0002_0120OS00121_8000000_001/JJR_19810212_OGH0002_0120OS00121_8000000_001.html"
+          },
+          {
+           "DataType": "Rtf",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19810212_OGH0002_0120OS00121_8000000_001/JJR_19810212_OGH0002_0120OS00121_8000000_001.rtf"
+          },
+          {
+           "DataType": "Pdf",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19810212_OGH0002_0120OS00121_8000000_001/JJR_19810212_OGH0002_0120OS00121_8000000_001.pdf"
+          }
+         ]
+        }
+       }
+      }
+     }
+    },
+    {
+     "Data": {
+      "Metadaten": {
+       "Technisch": {
+        "ID": "JJR_19780622_OGH0002_0020OB00004_7800000_003",
+        "Applikation": "Justiz",
+        "Organ": "OGH",
+        "ImportTimestamp": {
+         "@xsi:nil": "true",
+         "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+        }
+       },
+       "Allgemein": {
+        "Veroeffentlicht": "1997-06-15",
+        "Geaendert": "2026-06-24",
+        "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJR_19780622_OGH0002_0020OB00004_7800000_003"
+       },
+       "Judikatur": {
+        "Dokumenttyp": "Rechtssatz",
+        "Geschaeftszahl": {
+         "item": "2Ob4/78; 1Ob658/82; 3Ob531/88; 3Ob523/88; 2Ob45/93; 2Ob99/95; 4Ob2129/96h; 1Ob91/99k; 9Ob78/99g; 9Ob36/00k; 2Ob79/00g; 1Ob282/00b; 8Ob127/02p; 6Ob124/02g; 2Ob120/02i; 2Ob111/03t; 1Ob200/03y; 2Ob178/04x; 2Ob233/04k; 2Ob7/05a; 8Ob133/06a; 2Ob163/06v; 2Ob58/07d; 2Ob39/09p; 6Ob248/09b; 4Ob8/11x; 4Ob200/11g; 2Ob113/11y; 2Ob72/13x; 15Os103/14g; 9Ob28/14d; 4Ob48/16m; 4Ob208/17t; 1Ob170/18h; 1Ob28/23h; 4Ob109/24v; 2Ob30/25p; 8Ob52/26v"
+        },
+        "Normen": {
+         "item": [
+          "ABGB §1325 B1",
+          "ABGB §1325 E4"
+         ]
+        },
+        "Entscheidungsdatum": "2026-05-20",
+        "Schlagworte": "kosmetisch",
+        "EuropeanCaseLawIdentifier": "ECLI:AT:OGH0002:1978:RS0030778",
+        "Justiz": {
+         "Rechtsgebiete": {
+          "item": "Zivilrecht"
+         },
+         "Gericht": "OGH",
+         "Rechtssatznummern": {
+          "item": "RS0030778"
+         },
+         "Entscheidungstexte": {
+          "item": [
+           {
+            "Geschaeftszahl": "2 Ob 4/78",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1978-06-22",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19780622_OGH0002_0020OB00004_7800000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 658/82",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1982-12-01",
+            "Anmerkung": "nur: \"Verletzung an der Gesundheit\" ist eine Störung der inneren Lebensvorgänge. Hiebei muss es sich aber zum Beispiel um massive Einwirkungen in die psychische Sphäre (zum Beispiel einen Schock) handeln; eine psychische Einwirkung, die bloß das seelische Wohlbefinden beeinträchtigt, ist keine Gesundheitsverletzung. (T1)<br/>Veröff: EvBl 1983/82 S 326"
+           },
+           {
+            "Geschaeftszahl": "3 Ob 531/88",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1988-07-13",
+            "Anmerkung": "nur T1; Veröff: JBl 1989,41",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19880713_OGH0002_0030OB00531_8800000_000"
+           },
+           {
+            "Geschaeftszahl": "3 Ob 523/88",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1988-09-07",
+            "Anmerkung": "nur T1",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19880907_OGH0002_0030OB00523_8800000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 45/93",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1994-06-16",
+            "Anmerkung": "nur T1",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19940616_OGH0002_0020OB00045_9300000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 99/95",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1995-12-21",
+            "Anmerkung": "Auch; nur T1; Beisatz: Psychische Erkrankung, die medizinisch behandlungsbedürftig ist. (T2)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19951221_OGH0002_0020OB00099_9500000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 2129/96h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1996-06-25",
+            "Anmerkung": "Auch; nur T1",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19960625_OGH0002_0040OB02129_96H0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 91/99k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1999-05-25",
+            "Anmerkung": "Auch; nur: Hiebei muss es sich aber zum Beispiel um massive Einwirkung in die psychische Sphäre (zum Beispiel einen Schock) handeln; eine psychische Einwirkung, die bloß das seelische Wohlbefinden beeinträchtigt, ist keine Gesundheitsverletzung. (T3)<br/>Beisatz: Eine derartige massive psychische Beeinträchtigung ist anzunehmen, wenn aus ärztlicher Perspektive die Behandlung der psychischen Störung geboten ist. Das ist vor allem dann der Fall, wenn nicht damit gerechnet werden kann, dass die Folgen von selbst abklingen, oder wenn zu befürchten ist, dass ohne ärztliche Behandlung eine dauernde gesundheitliche Störung zurückbleibt. (T4)<br/>Veröff: SZ 72/91",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19990525_OGH0002_0010OB00091_99K0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 78/99g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "1999-11-03",
+            "Anmerkung": "Auch; nur T1; Beisatz: Hier: Längere depressive Reaktion und psychosexuelle Entwicklungsstörung. (T5)<br/>Veröff: SZ 72/165",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_19991103_OGH0002_0090OB00078_99G0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 36/00k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2000-07-12",
+            "Anmerkung": "nur T3; Beis wie T4",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20000712_OGH0002_0090OB00036_00K0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 79/00g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2001-02-22",
+            "Anmerkung": "Vgl auch; Beisatz: Bei nahen Verwandten kann auch der durch die unfallkausale Trauer entstandene Schockschaden mit Krankheitswert deren direkten Schmerzengeldanspruch begründen. (T6)<br/>Veröff: SZ 74/24",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20010222_OGH0002_0020OB00079_00G0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 282/00b",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2001-02-27",
+            "Anmerkung": "nur T1; Beis wie T2; Beis wie T4",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20010227_OGH0002_0010OB00282_00B0000_000"
+           },
+           {
+            "Geschaeftszahl": "8 Ob 127/02p",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2002-08-29",
+            "Anmerkung": "Vgl auch: Beis wie T6; Beisatz: Entscheidend ist, dass die Verletzungshandlung gegenüber dem \"Angehörigen\" typischerweise in hohem Maß geeignet erscheint, einen Schockschaden herbeizuführen. (T7) <br/>Beisatz: Muss die Beklagte für den Tod ihres Patienten wegen eines Behandlungsfehlers einstehen und hat die Todesnachricht bei dessen Lebensgefährtin eine Depression mit Krankheitswert hervorgerufen, so ist ihr für die mit der Krankheit verbundenen Schmerzzustände auch ein Schmerzengeld zuzubilligen. (T8)<br/>Veröff: SZ 2002/110",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20020829_OGH0002_0080OB00127_02P0000_000"
+           },
+           {
+            "Geschaeftszahl": "6 Ob 124/02g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-02-20",
+            "Anmerkung": "Auch; Beis wie T4; Veröff: SZ 2003/16",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20030220_OGH0002_0060OB00124_02G0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 120/02i",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-05-21",
+            "Anmerkung": "nur T1; Beisatz: Hier: Posttraumatische Belastungsstörung als Folge eines Unfalles, welche Therapien erforderlich macht und Krankheitswert erreicht. (T9)<br/>Beisatz: Von einer ersatzfähigen Gesundheitsschädigung ist dann auszugehen, wenn körperliche Symptome vorliegen, die als Krankheit anzusehen sind. Entscheidend ist daher, ob die psychische Beeinträchtigung behandlungsbedürftig oder wenigstens ärztlich diagnostizierbar und damit medizinisch fassbar ist. (T10)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20030521_OGH0002_0020OB00120_02I0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 111/03t",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-06-12",
+            "Anmerkung": "Auch; Beisatz: Hier: Erkrankung aus dem psychosomatischen Formenkreis, nämlich eine \"Anorexia nervosa\", sowie eine posttraumatische Erlebnisreaktion und Belastungsreaktion. (T11)<br/>Veröff: SZ 2003/67",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20030612_OGH0002_0020OB00111_03T0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 200/03y",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2003-10-14",
+            "Anmerkung": "Vgl; Beis wie T10; Beisatz: Hier: Behandlungsbedürftige posttraumatische Belastungsstörung mit Krankheitswert des Klägers aufgrund des an ihm begangenen Raubüberfalls. (T12)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20031014_OGH0002_0010OB00200_03Y0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 178/04x",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2004-09-23",
+            "Anmerkung": "Vgl; Beisatz: Im Falle eines Mitverschuldens des Getöteten hat eine Kürzung des Schmerzengeldanspruches zu erfolgen. (T13)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20040923_OGH0002_0020OB00178_04X0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 233/04k",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2004-11-04",
+            "Anmerkung": "Vgl; Beis wie T13",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20041104_OGH0002_0020OB00233_04K0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 7/05a",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2005-01-20",
+            "Anmerkung": "Auch; Beisatz: Hier: Zuspruch der Kosten für eine Facelifting-Operation bei aufgrund eines unfallkausalen traumatischen Ereignisses (Tod der Tochter) hervorgerufener außergewöhnlich starken vorzeitigen Alterung der Mutter. (T14)<br/>Veröff: SZ 2005/4",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20050120_OGH0002_0020OB00007_05A0000_000"
+           },
+           {
+            "Geschaeftszahl": "8 Ob 133/06a",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2006-11-30",
+            "Anmerkung": "Vgl auch; Beisatz: Schmerzengeld für Schockschäden setzt grundsätzlich eine massive Einwirkung in die psychische Sphäre im Sinn einer behandlungsbedürftigen Krankheit voraus. (T15)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20061130_OGH0002_0080OB00133_06A0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 163/06v",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2007-06-14",
+            "Anmerkung": "Auch; Beis wie T4; Beisatz: Beeinträchtigungen wie Schlaflosigkeit, völlige Schwunglosigkeit; Erschöpfungszustände, Schlafstörungen, posttraumatische Belastungsstörung, Hoffnungslosigkeit, traurige Verstimmung, Antriebsstörungen können durchaus Krankheitswert haben. Der Umstand, dass die Kläger bisher medizinische beziehungsweise psychologische Hilfe nicht in Anspruch genommen haben, schließt den allfälligen Krankheitswert solcher Beeinträchtigungen nicht aus (vergleiche 2 Ob 120/02i). (T16)<br/>Veröff: SZ 2007/96",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20070614_OGH0002_0020OB00163_06V0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 58/07d",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2008-01-24",
+            "Anmerkung": "Auch; Beis wie T10; Beisatz: Psychische Beeinträchtigungen (Schockschäden) sind unter der Voraussetzung ersatzfähig, dass sie krankheitswertige Gesundheitsschäden hervorriefen. (T17)<br/>Beis wie T16 nur: Der Umstand, dass die Kläger bisher medizinische beziehungsweise psychologische Hilfe nicht in Anspruch genommen haben, schließt den allfälligen Krankheitswert solcher Beeinträchtigungen nicht aus. (T18)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20080124_OGH0002_0020OB00058_07D0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 39/09p",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2009-06-25",
+            "Anmerkung": "Vgl auch; Vgl Beis wie T13; Beisatz: Schockschaden in Form einer behandlungsbedürftigen Depression. (T19)<br/>Vgl Beis wie T2; Beisatz: Bei Schockschäden bietet - im Gegensatz zum Trauerschmerz - schon die eingetretene Gesundheitsstörung einen objektiven und damit sicher feststellbaren und überprüfbaren Anhaltspunkt für das Vorliegen und den Umfang des ideellen Schadens. (T20)<br/>Beisatz: Geschwister, die Schockschäden erleiden, gehören zu den ersatzberechtigten nahen Angehörigen. (T21)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20090625_OGH0002_0020OB00039_09P0000_000"
+           },
+           {
+            "Geschaeftszahl": "6 Ob 248/09b",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2010-01-14",
+            "Anmerkung": "Vgl auch; Bem: Hier: Todesangst. (T22)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20100114_OGH0002_0060OB00248_09B0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 8/11x",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-04-12",
+            "Anmerkung": "Auch; Beis wie T2; Beis ähnlich wie T4; Beis ähnlich wie T16<br/>Veröff: SZ 2011/48",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20110412_OGH0002_0040OB00008_11X0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 200/11g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2011-12-20",
+            "Anmerkung": "Vgl auch; Beisatz: Hier: Psychische Beeinträchtigung mit Krankheitswert aufgrund eines Eingriffs in die Intimsphäre einer Unmündigen. (T23)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20111220_OGH0002_0040OB00200_11G0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 113/11y",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2012-05-15",
+            "Anmerkung": "Auch; Beis wie T17",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20120515_OGH0002_0020OB00113_11Y0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 72/13x",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2013-10-23",
+            "Anmerkung": "Auch; Beis wie T17",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20131023_OGH0002_0020OB00072_13X0000_000"
+           },
+           {
+            "Geschaeftszahl": "15 Os 103/14g",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2014-10-29",
+            "Anmerkung": "Auch; Beis wie T5; Beis wie T10; Beis wie T12; Beis wie T16; Beis wie T23",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20141029_OGH0002_0150OS00103_14G0000_000"
+           },
+           {
+            "Geschaeftszahl": "9 Ob 28/14d",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2014-11-27",
+            "Anmerkung": "Vgl auch; Beis wie T15",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20141127_OGH0002_0090OB00028_14D0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 48/16m",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2016-03-30",
+            "Anmerkung": "Auch; nur T1; nur T3",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20160330_OGH0002_0040OB00048_16M0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 208/17t",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2018-03-22",
+            "Anmerkung": "Auch; Veröff: SZ 2018/24",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20180322_OGH0002_0040OB00208_17T0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 170/18h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2018-11-21",
+            "Anmerkung": "Auch; Beisatz: Hier: Kein ideeller Schadenersatz für eine durch behauptetes Mobbing verursachte psychische Beeinträchtigung ohne Krankheitswert. (T24)",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20181121_OGH0002_0010OB00170_18H0000_000"
+           },
+           {
+            "Geschaeftszahl": "1 Ob 28/23h",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsart": "Ordentliche Erledigung (Sachentscheidung)",
+            "Entscheidungsdatum": "2023-06-27",
+            "Anmerkung": "vgl; nur T1; nur T3; Beisatz wie T10; Beisatz wie T16; Beisatz wie T17; Beisatz wie T23; Beisatz wie T24",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20230627_OGH0002_0010OB00028_23H0000_000"
+           },
+           {
+            "Geschaeftszahl": "4 Ob 109/24v",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsart": "Ordentliche Erledigung (Sachentscheidung)",
+            "Entscheidungsdatum": "2024-10-22",
+            "Anmerkung": "Anm: Hier: Bloße Angst- und Unlustgefühle aufgrund fehlerhaften Schaumstoffes eines Beatmungsgeräts.",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20241022_OGH0002_0040OB00109_24V0000_000"
+           },
+           {
+            "Geschaeftszahl": "2 Ob 30/25p",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2025-04-29",
+            "Anmerkung": "vgl; nur T20",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20250429_OGH0002_0020OB00030_25P0000_000"
+           },
+           {
+            "Geschaeftszahl": "8 Ob 52/26v",
+            "Dokumenttyp": "Text",
+            "Gericht": "OGH",
+            "Entscheidungsdatum": "2026-05-20",
+            "Anmerkung": "Beisatz wie T1; Beisatz wie T3; Beisatz wie T10; Beisatz wie T16; Beisatz wie T17; Beisatz wie T23; Beisatz wie T24",
+            "DokumentUrl": "https://www.ris.bka.gv.at/Dokument.wxe?Abfrage=Justiz&Dokumentnummer=JJT_20260520_OGH0002_0080OB00052_26V0000_000"
+           }
+          ]
+         }
+        }
+       }
+      },
+      "Dokumentliste": {
+       "ContentReference": {
+        "ContentType": "MainDocument",
+        "Name": "Hauptdokument",
+        "Urls": {
+         "ContentUrl": [
+          {
+           "DataType": "Xml",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19780622_OGH0002_0020OB00004_7800000_003/JJR_19780622_OGH0002_0020OB00004_7800000_003.xml"
+          },
+          {
+           "DataType": "Html",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19780622_OGH0002_0020OB00004_7800000_003/JJR_19780622_OGH0002_0020OB00004_7800000_003.html"
+          },
+          {
+           "DataType": "Rtf",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19780622_OGH0002_0020OB00004_7800000_003/JJR_19780622_OGH0002_0020OB00004_7800000_003.rtf"
+          },
+          {
+           "DataType": "Pdf",
+           "Url": "https://www.ris.bka.gv.at/Dokumente/Justiz/JJR_19780622_OGH0002_0020OB00004_7800000_003/JJR_19780622_OGH0002_0020OB00004_7800000_003.pdf"
+          }
+         ]
+        }
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

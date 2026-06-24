@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "at-eli-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server for the Austrian RIS API (data.bka.gv.at) — search and fetch federal legislation with ELI identifiers and verifiable citations."
 readme = "README.md"
 license = { text = "Apache-2.0" }

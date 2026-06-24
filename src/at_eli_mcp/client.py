@@ -18,7 +18,7 @@ from .citations import ALLOWED_TEXT_HOST
 
 DEFAULT_BASE_URL = "https://data.bka.gv.at/ris/api/v2.6"
 DEFAULT_TIMEOUT = httpx.Timeout(40.0, connect=10.0)
-USER_AGENT = "at-eli-mcp/0.1.0 (+https://github.com/matematicsolutions/at-eli-mcp)"
+USER_AGENT = "at-eli-mcp/0.2.0 (+https://github.com/matematicsolutions/at-eli-mcp)"
 
 _RETRY_STATUS = frozenset({429, 500, 502, 503, 504})
 _MAX_ATTEMPTS = 3
@@ -88,6 +88,21 @@ class RisClient:
     async def bundesrecht_search(self, params: dict[str, Any]) -> dict[str, Any]:
         """GET /Bundesrecht. Returns the OgdSearchResult dict; raises RisError on an Error block."""
         url = f"{self.base_url}/Bundesrecht"
+        key = self._cache_key(url, params)
+        cached = self._cache.get(key)
+        if cached is None:
+            clean = {k: v for k, v in params.items() if v is not None}
+            resp = await self._request_with_backoff(url, clean or None, accept="application/json")
+            cached = resp.json()
+            self._cache.set(key, cached, ttl=HttpCache.ttl_for("search"))
+        result = cached.get("OgdSearchResult", {}) if isinstance(cached, dict) else {}
+        if isinstance(result, dict) and isinstance(result.get("Error"), dict):
+            raise RisError(str(result["Error"].get("Message", "RIS error")))
+        return result if isinstance(result, dict) else {}
+
+    async def judikatur_search(self, params: dict[str, Any]) -> dict[str, Any]:
+        """GET /Judikatur. Returns the OgdSearchResult dict; raises RisError on an Error block."""
+        url = f"{self.base_url}/Judikatur"
         key = self._cache_key(url, params)
         cached = self._cache.get(key)
         if cached is None:

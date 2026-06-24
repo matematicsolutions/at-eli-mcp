@@ -2,14 +2,14 @@
 
 An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
 (Rechtsinformationssystem des Bundes, operated by the Bundeskanzleramt). It searches and
-retrieves Austrian federal legislation (Bundesrecht) with verifiable ELI identifiers and
-Austrian citations.
+retrieves Austrian federal legislation (Bundesrecht) and case law (Judikatur) with verifiable ELI
+identifiers, native ECLI for decisions, and Austrian citations.
 
 Part of the MateMatic `eu-legal-mcp` production line - the Austrian member, after the Polish
 `sejm-eli-mcp` and the German `de-eli-mcp`. Same architecture and citation contract, RIS source.
 
-> **Scope.** This MVP covers Austrian **federal law** (Bundesrecht). State law (Landesrecht)
-> and case law (Judikatur, ECLI) are later features. Every response carries a `dataset_note`.
+> **Scope.** Covers Austrian **federal law** (Bundesrecht) and **case law** (Judikatur, with a
+> native ECLI). State law (Landesrecht) is a later feature. Every response carries a `dataset_note`.
 >
 > **Licence.** Austrian Bundesgesetzblatt content and statutes are official works in the public
 > domain; RIS is published as Open Government Data (keyless). This connector relays that public
@@ -20,7 +20,9 @@ Part of the MateMatic `eu-legal-mcp` production line - the Austrian member, afte
 | Tool | What it does |
 |---|---|
 | `at_search` | Search federal law (`GET /Bundesrecht`) by free text and/or title. |
-| `at_get_text` | Fetch the full text (`html` or `xml`) from a hit's content URL. |
+| `at_get_text` | Fetch an act's full text (`html` or `xml`) from a hit's content URL. |
+| `at_case_search` | Search case law (`GET /Judikatur`) by free text, choosing a court (`applikation`). Hits carry a native `ecli`. |
+| `at_get_case_text` | Fetch a decision's full text from a case hit's content URL. |
 | `at_list_collections` | List the RIS collections and which are exposed. |
 
 Every response carries the contract: `eli_uri` (a full ELI URL, e.g.

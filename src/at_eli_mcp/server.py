@@ -21,9 +21,13 @@ from fastmcp import FastMCP
 from mcp.types import ToolAnnotations
 
 from .audit import AuditLogger, hash_input, timer
-from .citations import flatten_reference
+from .citations import flatten_case_reference, flatten_reference
 from .client import DEFAULT_BASE_URL, RisClient, RisError, extract_references
 from .models import (
+    CaseRef,
+    CaseSearchQuery,
+    CaseSearchResult,
+    CaseText,
     Collection,
     LawRef,
     LawText,
@@ -33,20 +37,22 @@ from .models import (
 )
 
 INSTRUCTIONS = """\
-This MCP server exposes the Austrian RIS API (data.bka.gv.at), the official legal information system of the Republic of Austria, operated by the Bundeskanzleramt. The MVP covers federal law (Bundesrecht). Every response carries a stable `eli_uri`, a `human_readable_citation` and a `source_url` (the citation contract).
+This MCP server exposes the Austrian RIS API (data.bka.gv.at), the official legal information system of the Republic of Austria, operated by the Bundeskanzleramt. It covers federal law (Bundesrecht) and case law (Judikatur). Legislation carries the citation contract `eli_uri` / `human_readable_citation` / `source_url`; case law carries a native `ecli` instead of an ELI.
 
 ## Call order
 
 1. `at_search` - search federal law by `suchworte` (free text) and/or `titel`. Returns hits, each with `eli_uri` (a full ELI URL), `human_readable_citation` (e.g. "Datenschutzgesetz, BGBl. I Nr. 165/1999"), `source_url`, and `content_urls` ({html, xml}).
 2. `at_get_text` - fetch the full text of an act. Pass a `content_url` taken from a hit's `content_urls` (html or xml). Also pass that hit's `eli_uri` and `human_readable_citation` so the text response stays citable.
-3. `at_list_collections` - the RIS collections (Bundesrecht is exposed; Landesrecht and Judikatur are not yet).
+3. `at_case_search` - search case law (Judikatur) by `suchworte`, choosing an `applikation` (court): Justiz (incl. OGH), Vfgh, Vwgh, Bvwg, Lvwg, Dsk and others. Each hit carries a native `ecli` (e.g. "ECLI:AT:OGH0002:1981:RS0030792"), `human_readable_citation`, `source_url`, and `content_urls`.
+4. `at_get_case_text` - fetch the full text of a decision. Pass a `content_url` from a case hit's `content_urls`; also pass its `ecli` and `human_readable_citation` so the text stays citable.
+5. `at_list_collections` - the RIS collections (Bundesrecht and Judikatur are exposed; Landesrecht is not yet).
 
 ## Hard constraints
 
-- **ELI is the key to citability** - RIS returns a full ELI URL in `eli_uri`; do not invent it.
+- **ELI / ECLI are the keys to citability** - RIS returns a full ELI URL for legislation and a native ECLI for case law; do not invent either.
 - **Every response has `human_readable_citation` + `source_url`** - cite both to the user.
 - **No modification of official text** - returned verbatim from RIS.
-- **Federal law only (MVP)** - relay the `dataset_note`; state law and case law are not covered yet.
+- **Landesrecht not covered** - relay the `dataset_note`; state law is not exposed yet.
 - **Audit log JSONL** - every tool call appends to `~/.matematic/audit/at-eli-mcp.jsonl`.
 - **Full text is fetched only from ris.bka.gv.at** - any other host is refused.
 
@@ -55,13 +61,14 @@ This MCP server exposes the Austrian RIS API (data.bka.gv.at), the official lega
 Tools return a structured error with a `[code]` prefix:
 - `invalid_arg` - a parameter is missing or invalid (e.g. empty query, a content_url that is not a ris.bka.gv.at URL).
 - `not_found` - nothing matched, or the document text does not exist.
-- `unsupported_format` - a `content_url` for `at_get_text` must end in `.html` or `.xml`.
+- `unsupported_format` - a `content_url` for `at_get_text` / `at_get_case_text` must end in `.html` or `.xml`.
 - `upstream_error` - a RIS API error (HTTP, timeout, schema validation). Retry once before surfacing.
 
 ## Response style
 
 - Cite acts as `human_readable_citation` with the ELI URL: "Datenschutzgesetz, BGBl. I Nr. 165/1999 (https://www.ris.bka.gv.at/eli/...)".
-- NEVER invent an ELI, a BGBl number or a date - take each from the search hit.
+- Cite decisions with their `ecli` and `source_url`.
+- NEVER invent an ELI, an ECLI, a BGBl number or a date - take each from the search hit.
 - Relay the `dataset_note` when scope matters to the answer.
 """
 
@@ -93,7 +100,7 @@ READ_ONLY = ToolAnnotations(
 _COLLECTIONS: list[dict[str, str]] = [
     {"code": "Bundesrecht", "name": "Federal law (consolidated + BGBl)", "note": "Exposed by at_search."},
     {"code": "Landesrecht", "name": "State law (Bundeslaender)", "note": "Not yet exposed (later feature)."},
-    {"code": "Judikatur", "name": "Case law (ECLI)", "note": "Not yet exposed (later feature)."},
+    {"code": "Judikatur", "name": "Case law (ECLI)", "note": "Exposed by at_case_search / at_get_case_text."},
 ]
 
 mcp: FastMCP = FastMCP(name="at-eli-mcp", instructions=INSTRUCTIONS)
@@ -248,6 +255,147 @@ async def at_get_text(
 
     audit.log(
         tool="at_get_text",
+        input_hash=input_hash,
+        output_count_or_size=result.byte_size or 0,
+        duration_ms=t.duration_ms,
+        status="ok",
+    )
+    return result
+
+
+# ---------------------------------------------------------------------------
+# at_case_search
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool(annotations=READ_ONLY)
+async def at_case_search(query: CaseSearchQuery) -> CaseSearchResult:
+    """Search Austrian case law (RIS Judikatur).
+
+    Maps to ``GET /Judikatur``. Each hit gets a native ``ecli``, ``human_readable_citation``,
+    ``source_url`` and ``content_urls`` (html/xml).
+
+    Args:
+        query: ``CaseSearchQuery`` - suchworte, applikation (Justiz/Vfgh/Vwgh/...), page_size, page_number.
+
+    Returns:
+        ``CaseSearchResult`` with ``total`` and ``items: list[CaseRef]``.
+    """
+    audit = _audit()
+    input_hash = hash_input(query.model_dump(mode="json"))
+    base = _base_url()
+
+    if not query.suchworte or not query.suchworte.strip():
+        raise ToolError("invalid_arg", "Provide suchworte (free-text query) for case-law search.")
+
+    params: dict[str, Any] = {
+        "Applikation": query.applikation,
+        "Suchworte": query.suchworte,
+        "DokumenteProSeite": query.page_size,
+        "Seitennummer": query.page_number,
+    }
+
+    with timer() as t:
+        try:
+            async with RisClient(base_url=base) as client:
+                result = await client.judikatur_search(params)
+        except Exception as exc:
+            audit.log(
+                tool="at_case_search",
+                input_hash=input_hash,
+                output_count_or_size=0,
+                duration_ms=t.duration_ms if t.duration_ms else 0,
+                status="error",
+                error=f"{type(exc).__name__}: {exc}",
+            )
+            raise _map_upstream(exc) from exc
+
+    total, refs = extract_references(result)
+    items = [CaseRef.model_validate(flatten_case_reference(r, base_url=base)) for r in refs]
+    out = CaseSearchResult(total=total, items=items, query_echo=query)
+
+    audit.log(
+        tool="at_case_search",
+        input_hash=input_hash,
+        output_count_or_size=len(items),
+        duration_ms=t.duration_ms,
+        status="ok",
+    )
+    return out
+
+
+# ---------------------------------------------------------------------------
+# at_get_case_text
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool(annotations=READ_ONLY)
+async def at_get_case_text(
+    content_url: str,
+    ecli: str | None = None,
+    human_readable_citation: str | None = None,
+) -> CaseText:
+    """Fetch the full text of a decision from a RIS content URL.
+
+    Args:
+        content_url: an absolute ris.bka.gv.at URL from a case hit's ``content_urls`` (``.html`` or ``.xml``).
+        ecli: the hit's ECLI, passed through so the text stays citable.
+        human_readable_citation: the hit's citation, passed through.
+
+    Returns:
+        ``CaseText`` with ``source_url``, ``format``, ``content`` (and the passed-through ECLI/citation).
+    """
+    audit = _audit()
+    input_hash = hash_input({"content_url": content_url})
+    base = _base_url()
+
+    if not content_url or not content_url.strip():
+        raise ToolError("invalid_arg", "content_url must not be empty.")
+    url = content_url.strip()
+    fmt: TextFormat
+    if url.lower().endswith(".xml"):
+        fmt = "xml"
+    elif url.lower().endswith(".html"):
+        fmt = "html"
+    else:
+        raise ToolError("unsupported_format", "content_url must end in .html or .xml.")
+
+    with timer() as t:
+        try:
+            async with RisClient(base_url=base) as client:
+                text, ct = await client.get_text_url(url)
+        except ValueError as exc:  # host not allowed
+            audit.log(
+                tool="at_get_case_text",
+                input_hash=input_hash,
+                output_count_or_size=0,
+                duration_ms=t.duration_ms if t.duration_ms else 0,
+                status="error",
+            )
+            raise ToolError("invalid_arg", str(exc)) from exc
+        except Exception as exc:
+            audit.log(
+                tool="at_get_case_text",
+                input_hash=input_hash,
+                output_count_or_size=0,
+                duration_ms=t.duration_ms if t.duration_ms else 0,
+                status="error",
+                error=f"{type(exc).__name__}: {exc}",
+            )
+            raise _map_upstream(exc) from exc
+
+    result = CaseText(
+        source_url=url,
+        format=fmt,
+        ecli=ecli,
+        human_readable_citation=human_readable_citation,
+        content=text,
+        content_type=ct,
+        byte_size=len(text.encode("utf-8")),
+    )
+
+    audit.log(
+        tool="at_get_case_text",
         input_hash=input_hash,
         output_count_or_size=result.byte_size or 0,
         duration_ms=t.duration_ms,

@@ -124,3 +124,81 @@ def flatten_reference(reference: dict[str, Any], base_url: str) -> dict[str, Any
         dokument_url if isinstance(dokument_url, str) and dokument_url.strip() else base_url
     )
     return out
+
+
+def _first_geschaeftszahl(judikatur: dict[str, Any]) -> str | None:
+    """Geschaeftszahl may be a single value or a ';'-joined list (a Rechtssatz). Take the first."""
+    gz = judikatur.get("Geschaeftszahl")
+    raw = gz.get("item") if isinstance(gz, dict) else gz
+    if isinstance(raw, list):
+        raw = raw[0] if raw else None
+    if isinstance(raw, str) and raw.strip():
+        return raw.split(";")[0].strip()
+    return None
+
+
+def case_citation(gericht: str | None, geschaeftszahl: str | None, date: str | None) -> str | None:
+    """Austrian case citation: 'OGH 20.05.2026, 12Os121/80' (parts that exist)."""
+    parts: list[str] = []
+    if gericht:
+        parts.append(gericht)
+    if date:
+        parts.append(date)
+    head = " ".join(parts) if parts else None
+    if head and geschaeftszahl:
+        return f"{head}, {geschaeftszahl}"
+    return head or geschaeftszahl
+
+
+def flatten_case_reference(reference: dict[str, Any], base_url: str) -> dict[str, Any]:
+    """Flatten a Judikatur OgdDocumentReference into a contract-bearing case record.
+
+    Case law has no ELI; the citable identifier is the native ECLI
+    (``Judikatur.EuropeanCaseLawIdentifier``), surfaced verbatim.
+    """
+    metadaten = reference.get("Data", {}).get("Metadaten", {})
+    technisch = metadaten.get("Technisch", {}) if isinstance(metadaten, dict) else {}
+    judikatur = metadaten.get("Judikatur", {}) if isinstance(metadaten, dict) else {}
+    justiz = judikatur.get("Justiz", {}) if isinstance(judikatur, dict) else {}
+
+    gericht = None
+    if isinstance(justiz, dict):
+        g = justiz.get("Gericht")
+        if isinstance(g, str) and g.strip():
+            gericht = g.strip()
+    if not gericht:
+        organ = technisch.get("Organ")
+        gericht = organ.strip() if isinstance(organ, str) and organ.strip() else None
+
+    geschaeftszahl = _first_geschaeftszahl(judikatur) if isinstance(judikatur, dict) else None
+    date = judikatur.get("Entscheidungsdatum") if isinstance(judikatur, dict) else None
+    ecli = judikatur.get("EuropeanCaseLawIdentifier") if isinstance(judikatur, dict) else None
+    normen_raw = judikatur.get("Normen") if isinstance(judikatur, dict) else None
+    norm_item = normen_raw.get("item") if isinstance(normen_raw, dict) else normen_raw
+    if isinstance(norm_item, list):
+        norm_item = "; ".join(str(n) for n in norm_item)
+    dokument_url = _find_first(reference.get("Data", {}).get("Metadaten", {}), "DokumentUrl")
+    urls = content_urls(reference)
+
+    out: dict[str, Any] = {
+        "id": technisch.get("ID"),
+        "applikation": technisch.get("Applikation"),
+        "gericht": gericht,
+        "dokumenttyp": judikatur.get("Dokumenttyp") if isinstance(judikatur, dict) else None,
+        "geschaeftszahl": geschaeftszahl,
+        "entscheidungsdatum": date if isinstance(date, str) else None,
+        "norm": norm_item if isinstance(norm_item, str) else None,
+        "content_urls": urls,
+    }
+    if isinstance(ecli, str) and ecli.strip():
+        out["ecli"] = ecli.strip()
+    citation = case_citation(gericht, geschaeftszahl, out["entscheidungsdatum"])
+    if citation is not None:
+        out["human_readable_citation"] = citation
+    chosen = urls.get("html") or urls.get("xml")
+    out["source_url"] = (
+        dokument_url
+        if isinstance(dokument_url, str) and dokument_url.strip()
+        else (chosen or base_url)
+    )
+    return out
