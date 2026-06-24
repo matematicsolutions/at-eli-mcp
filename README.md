@@ -1,0 +1,74 @@
+# at-eli-mcp
+
+An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
+(Rechtsinformationssystem des Bundes, operated by the Bundeskanzleramt). It searches and
+retrieves Austrian federal legislation (Bundesrecht) with verifiable ELI identifiers and
+Austrian citations.
+
+Part of the MateMatic `eu-legal-mcp` production line - the Austrian member, after the Polish
+`sejm-eli-mcp` and the German `de-eli-mcp`. Same architecture and citation contract, RIS source.
+
+> **Scope.** This MVP covers Austrian **federal law** (Bundesrecht). State law (Landesrecht)
+> and case law (Judikatur, ECLI) are later features. Every response carries a `dataset_note`.
+>
+> **Licence.** Austrian Bundesgesetzblatt content and statutes are official works in the public
+> domain; RIS is published as Open Government Data (keyless). This connector relays that public
+> content with attribution and a `source_url`.
+
+## The tools
+
+| Tool | What it does |
+|---|---|
+| `at_search` | Search federal law (`GET /Bundesrecht`) by free text and/or title. |
+| `at_get_text` | Fetch the full text (`html` or `xml`) from a hit's content URL. |
+| `at_list_collections` | List the RIS collections and which are exposed. |
+
+Every response carries the contract: `eli_uri` (a full ELI URL, e.g.
+`https://www.ris.bka.gv.at/eli/bgbl/I/2026/6/20260218`), `human_readable_citation`
+(e.g. `Datenschutzgesetz, BGBl. I Nr. 165/1999`), and `source_url`.
+
+## Install
+
+```bash
+cd at-eli-mcp
+pip install -e .
+```
+
+## Configure (Claude Code / any MCP client)
+
+```json
+{
+  "mcpServers": {
+    "at-eli-mcp": { "command": "at-eli-mcp" }
+  }
+}
+```
+
+Environment:
+
+- `AT_ELI_BASE_URL` - default `https://data.bka.gv.at/ris/api/v2.6`
+- `AT_ELI_CACHE_DIR` - default `~/.matematic/cache/at-eli`
+- `AT_ELI_AUDIT_DIR` - default `~/.matematic/audit`
+
+No API key. RIS is keyless Open Government Data.
+
+## Governance
+
+- **Public data only** - read-only against RIS; no client data leaves the machine beyond search parameters.
+- **Audit log** - every tool call appends one JSON line to `~/.matematic/audit/at-eli-mcp.jsonl`.
+- **Vendor-neutral** - talks only to `data.bka.gv.at` and (for full text) `ris.bka.gv.at`; no LLM provider, no telemetry.
+- **Host-restricted text** - full text is fetched only from `ris.bka.gv.at`.
+
+See `CONSTITUTION.md` and `DISCOVERY.md`.
+
+## Tests
+
+```bash
+pip install -e ".[dev]"
+pytest tests/test_instructions_drift.py -v   # offline
+pytest tests/test_smoke.py -v                # hits live RIS
+```
+
+## Licence
+
+Apache-2.0. © Matematic Solutions / Wieslaw Mazur.

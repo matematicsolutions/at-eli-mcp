@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "at-eli-mcp": {
+      "command": "at-eli-mcp",
+      "env": {
+        "AT_ELI_BASE_URL": "https://data.bka.gv.at/ris/api/v2.6",
+        "AT_ELI_CACHE_DIR": "~/.matematic/cache/at-eli",
+        "AT_ELI_AUDIT_DIR": "~/.matematic/audit"
+      }
+    }
+  }
+}
