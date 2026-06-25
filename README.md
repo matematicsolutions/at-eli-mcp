@@ -2,6 +2,23 @@
 
 <!-- mcp-name: io.github.matematicsolutions/at-eli-mcp -->
 
+
+## Instalacja (jedna komenda)
+
+Opublikowany na PyPI + MCP Registry (`io.github.matematicsolutions/at-eli-mcp`). Uruchomienie bez klonowania:
+
+```bash
+uvx at-eli-mcp
+```
+
+Konfiguracja klienta MCP (stdio):
+
+```json
+{ "mcpServers": { "at-eli-mcp": { "command": "uvx", "args": ["at-eli-mcp"] } } }
+```
+
+(Budowanie ze źródeł — niżej.)
+
 An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
 (Rechtsinformationssystem des Bundes, operated by the Bundeskanzleramt). It searches and
 retrieves Austrian federal legislation (Bundesrecht) and case law (Judikatur) with verifiable ELI
