@@ -1,5 +1,7 @@
 # at-eli-mcp
 
+<!-- mcp-name: io.github.matematicsolutions/at-eli-mcp -->
+
 An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
 (Rechtsinformationssystem des Bundes, operated by the Bundeskanzleramt). It searches and
 retrieves Austrian federal legislation (Bundesrecht) and case law (Judikatur) with verifiable ELI
