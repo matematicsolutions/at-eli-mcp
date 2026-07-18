@@ -3,26 +3,26 @@
 <!-- mcp-name: io.github.matematicsolutions/at-eli-mcp -->
 
 
-## Instalacja (jedna komenda)
+## Install (one command)
 
-Opublikowany na PyPI + MCP Registry (`io.github.matematicsolutions/at-eli-mcp`). Uruchomienie bez klonowania:
+Published on PyPI + MCP Registry (`io.github.matematicsolutions/at-eli-mcp`). Run without cloning:
 
 ```bash
 uvx at-eli-mcp
 ```
 
-Konfiguracja klienta MCP (stdio):
+Configure your MCP client (stdio):
 
 ```json
 { "mcpServers": { "at-eli-mcp": { "command": "uvx", "args": ["at-eli-mcp"] } } }
 ```
 
-### Windows 11 ze Smart App Control
+### Windows 11 with Smart App Control
 
-Smart App Control blokuje niepodpisane pliki wykonywalne, a `uvx.exe`, `pip.exe`
-i generowany przy instalacji `at-eli-mcp.exe` podpisane nie sa. `python.exe`
-z python.org jest podpisany przez Python Software Foundation, wiec uruchomienie
-przez modul omija blokade:
+Smart App Control blocks unsigned executables, and `uvx.exe`, `pip.exe` and the
+`at-eli-mcp.exe` launcher generated at install time are not signed. `python.exe` from
+python.org is signed by the Python Software Foundation, so running the module
+directly bypasses the block:
 
 ```bash
 python -m pip install at-eli-mcp
@@ -33,10 +33,10 @@ python -m at_eli_mcp
 { "mcpServers": { "at-eli-mcp": { "command": "python", "args": ["-m", "at_eli_mcp"] } } }
 ```
 
-Nie wylaczaj Smart App Control, zeby to obejsc - wylaczenia nie da sie cofnac
-bez ponownej instalacji systemu.
+Do not turn Smart App Control off to work around this - it cannot be re-enabled
+without reinstalling Windows.
 
-(Budowanie ze źródeł — niżej.)
+(Building from source - below.)
 
 An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
 (Rechtsinformationssystem des Bundes, operated by the Bundeskanzleramt). It searches and
