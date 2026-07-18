@@ -17,6 +17,25 @@ Konfiguracja klienta MCP (stdio):
 { "mcpServers": { "at-eli-mcp": { "command": "uvx", "args": ["at-eli-mcp"] } } }
 ```
 
+### Windows 11 ze Smart App Control
+
+Smart App Control blokuje niepodpisane pliki wykonywalne, a `uvx.exe`, `pip.exe`
+i generowany przy instalacji `at-eli-mcp.exe` podpisane nie sa. `python.exe`
+z python.org jest podpisany przez Python Software Foundation, wiec uruchomienie
+przez modul omija blokade:
+
+```bash
+python -m pip install at-eli-mcp
+python -m at_eli_mcp
+```
+
+```json
+{ "mcpServers": { "at-eli-mcp": { "command": "python", "args": ["-m", "at_eli_mcp"] } } }
+```
+
+Nie wylaczaj Smart App Control, zeby to obejsc - wylaczenia nie da sie cofnac
+bez ponownej instalacji systemu.
+
 (Budowanie ze źródeł — niżej.)
 
 An MCP server for **RIS** (`data.bka.gv.at`), Austria's official legal information system
