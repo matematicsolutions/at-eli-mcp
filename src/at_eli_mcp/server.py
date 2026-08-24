@@ -30,15 +30,13 @@ from .models import (
     CaseSearchResult,
     CaseText,
     Collection,
-    Coverage,
-    CoverageFamily,
-    CoverageGap,
     LawRef,
     LawText,
     SearchQuery,
     SearchResult,
     TextFormat,
 )
+from .coverage import Coverage, build_coverage
 
 INSTRUCTIONS = """\
 This MCP server exposes the Austrian RIS API (data.bka.gv.at), the official legal information system of the Republic of Austria, operated by the Bundeskanzleramt. It covers federal law (Bundesrecht) and case law (Judikatur). Legislation carries the citation contract `eli_uri` / `human_readable_citation` / `source_url`; case law carries a native `ecli` instead of an ELI.
@@ -106,59 +104,6 @@ _COLLECTIONS: list[dict[str, str]] = [
     {"code": "Landesrecht", "name": "State law (Bundeslaender)", "note": "Not yet exposed (later feature)."},
     {"code": "Judikatur", "name": "Case law (ECLI)", "note": "Exposed by at_case_search / at_get_case_text."},
 ]
-
-# Element 9 of the MateMatic MCP canon: this connector must be able to state its own
-# coverage AND its own holes on request. Knowledge that lives only as prose in
-# ``INSTRUCTIONS`` is passive - the model has to remember to relay it. Here it is callable.
-_COVERAGE_FAMILIES: list[dict[str, object]] = [
-    {
-        "name": "Bundesrecht",
-        "tool": "at_search / at_get_act / at_get_text",
-        "source": "ris.bka.gv.at (Bundesrecht konsolidiert + BGBl)",
-        "captured_at": None,
-        "live": True,
-    },
-    {
-        "name": "Judikatur",
-        "tool": "at_case_search / at_get_decision_text",
-        "source": "ris.bka.gv.at (Judikatur)",
-        "captured_at": None,
-        "live": True,
-    },
-]
-
-_COVERAGE_GAPS: list[dict[str, str]] = [
-    {
-        "id": "AT-001",
-        "family": "Landesrecht",
-        "missing": "State law of the nine Bundeslaender is not exposed by any tool here.",
-        "fallback": "Query ris.bka.gv.at directly, section Landesrecht.",
-    },
-    {
-        "id": "AT-002",
-        "family": "Judikatur",
-        "missing": (
-            "Only the RIS 'applikation' values this connector accepts are reachable "
-            "(Justiz, Vfgh, Vwgh, Bvwg, Lvwg, Dsk, Gbk, Pvak, Pdok). Other RIS applications are not."
-        ),
-        "fallback": "Use the RIS web search for applications outside that list.",
-    },
-    {
-        "id": "AT-003",
-        "family": "Bundesrecht",
-        "missing": (
-            "Legal force is not evaluated. RIS returns consolidated text as published; "
-            "this connector does not decide whether a provision is in force on a given date."
-        ),
-        "fallback": "Check Inkrafttretens-/Ausserkrafttretensdatum on the RIS record itself.",
-    },
-]
-
-_COVERAGE_AS_OF_NOTE = (
-    "Bundesrecht and Judikatur are queried live against RIS, so there is no local snapshot date. "
-    "Any date carried on a record states when RIS published it - not that this connector verified "
-    "it is still in force today."
-)
 
 mcp: FastMCP = FastMCP(name="at-eli-mcp", instructions=INSTRUCTIONS)
 
@@ -489,12 +434,15 @@ async def at_list_collections() -> list[Collection]:
     return collections
 
 
+# ---------------------------------------------------------------------------
+# Entry point
 @mcp.tool(annotations=READ_ONLY)
 async def at_coverage() -> Coverage:
     """Declare what this connector covers, how it is sourced, and what it does NOT cover.
 
-    Call this before telling a user that Austrian law "does not contain" something - the
-    absence may be a gap in this connector, not in the law. Every gap carries a fallback.
+    Call this before telling a user that the law "does not contain" something, and whenever
+    a search comes back empty: the absence may be a gap in this connector rather than in the
+    law. Every gap carries a fallback saying where to look instead.
 
     Returns:
         ``Coverage`` with families, an as-of note, and a non-empty list of known gaps.
@@ -503,12 +451,7 @@ async def at_coverage() -> Coverage:
     input_hash = hash_input({})
 
     with timer() as t:
-        coverage = Coverage(
-            status="ok",
-            as_of_note=_COVERAGE_AS_OF_NOTE,
-            families=[CoverageFamily(**f) for f in _COVERAGE_FAMILIES],
-            known_gaps=[CoverageGap(**g) for g in _COVERAGE_GAPS],
-        )
+        coverage = build_coverage()
 
     audit.log(
         tool="at_coverage",
@@ -520,8 +463,6 @@ async def at_coverage() -> Coverage:
     return coverage
 
 
-# ---------------------------------------------------------------------------
-# Entry point
 # ---------------------------------------------------------------------------
 
 

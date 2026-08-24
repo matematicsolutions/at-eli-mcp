@@ -138,38 +138,3 @@ class Collection(_Tolerant):
     code: str
     name: str | None = None
     note: str | None = None
-
-class CoverageFamily(_Tolerant):
-    """One data family this connector exposes, with the date its snapshot was captured."""
-
-    name: str = Field(description="Data family, e.g. 'Bundesrecht'.")
-    tool: str = Field(description="Tool that reaches this family.")
-    source: str = Field(description="Official source the data comes from.")
-    captured_at: str | None = Field(
-        default=None,
-        description="Date this family was last captured (ISO). None when the tool queries the source live.",
-    )
-    live: bool = Field(default=False, description="True when queried live instead of from a snapshot.")
-
-
-class CoverageGap(_Tolerant):
-    """A known, named hole in this connector's coverage - plus how to work around it."""
-
-    id: str = Field(description="Stable gap identifier, e.g. 'AT-001'.")
-    family: str = Field(description="Which family the gap belongs to.")
-    missing: str = Field(description="What is NOT available through this connector.")
-    fallback: str = Field(description="Where the user must go instead.")
-
-
-class Coverage(_Tolerant):
-    """What this connector covers, when it was captured, and - explicitly - what it does not."""
-
-    status: Literal["ok", "degraded", "failed"] = "ok"
-    as_of_note: str = Field(
-        description="States that dates say WHEN data was captured, not that it is still in force."
-    )
-    families: list[CoverageFamily] = Field(default_factory=list)
-    known_gaps: list[CoverageGap] = Field(
-        default_factory=list,
-        description="Never empty. An empty list would mean 'not checked', not 'no gaps'.",
-    )
