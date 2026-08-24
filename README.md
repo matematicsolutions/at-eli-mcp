@@ -65,6 +65,7 @@ Part of the MateMatic `eu-legal-mcp` production line - the Austrian member, afte
 | `at_case_search` | Search case law (`GET /Judikatur`) by free text, choosing a court (`applikation`). Hits carry a native `ecli`. |
 | `at_get_case_text` | Fetch a decision's full text from a case hit's content URL. |
 | `at_list_collections` | List the RIS collections and which are exposed. |
+| `at_coverage` | Declare what this connector covers, when each family was captured, and - explicitly - what it does NOT cover. Every gap carries a fallback. |
 
 Every response carries the contract: `eli_uri` (a full ELI URL, e.g.
 `https://www.ris.bka.gv.at/eli/bgbl/I/2026/6/20260218`), `human_readable_citation`
