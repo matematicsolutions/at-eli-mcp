@@ -1,0 +1,1009 @@
+{
+  "package_version": "0.4.3",
+  "tools": {
+    "at_case_search": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Search Austrian case law (RIS Judikatur).\n\nMaps to ``GET /Judikatur``. Each hit gets a native ``ecli``, ``human_readable_citation``,\n``source_url`` and ``content_urls`` (html/xml).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "additionalProperties": true,
+              "description": "``CaseSearchQuery`` - suchworte, applikation (Justiz/Vfgh/Vwgh/...), page_size, page_number.",
+              "properties": {
+                "applikation": {
+                  "default": "Justiz",
+                  "enum": [
+                    "Justiz",
+                    "Vfgh",
+                    "Vwgh",
+                    "Bvwg",
+                    "Lvwg",
+                    "Dsk",
+                    "Gbk",
+                    "Pvak",
+                    "Pdok"
+                  ],
+                  "type": "string"
+                },
+                "page_number": {
+                  "default": 1,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "page_size": {
+                  "default": "Ten",
+                  "enum": [
+                    "Ten",
+                    "Twenty",
+                    "Fifty",
+                    "OneHundred"
+                  ],
+                  "type": "string"
+                },
+                "suchworte": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_case_search",
+        "outputSchema": {
+          "additionalProperties": true,
+          "description": "Result of ``at_case_search``.",
+          "properties": {
+            "dataset_note": {
+              "default": "Austrian case law (Judikatur) via RIS. Decisions carry a native ECLI (no ELI). Choose an 'applikation': Justiz (ordinary courts incl. OGH), Vfgh (constitutional), Vwgh (administrative), Bvwg, Lvwg, Dsk, and others. Landesrecht is not yet covered.",
+              "type": "string"
+            },
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "description": "A flattened Austrian case-law reference (a Judikatur search hit).",
+                "properties": {
+                  "applikation": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "content_urls": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "dokumenttyp": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "ecli": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "entscheidungsdatum": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "gericht": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "geschaeftszahl": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "human_readable_citation": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "norm": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "source_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "query_echo": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "description": "Arguments for the ``at_case_search`` tool (RIS Judikatur).",
+                  "properties": {
+                    "applikation": {
+                      "default": "Justiz",
+                      "enum": [
+                        "Justiz",
+                        "Vfgh",
+                        "Vwgh",
+                        "Bvwg",
+                        "Lvwg",
+                        "Dsk",
+                        "Gbk",
+                        "Pvak",
+                        "Pdok"
+                      ],
+                      "type": "string"
+                    },
+                    "page_number": {
+                      "default": 1,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "page_size": {
+                      "default": "Ten",
+                      "enum": [
+                        "Ten",
+                        "Twenty",
+                        "Fifty",
+                        "OneHundred"
+                      ],
+                      "type": "string"
+                    },
+                    "suchworte": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "total": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total"
+          ],
+          "type": "object"
+        }
+      },
+      "sha256": "58b4d8df9c90718d61d21ec4cd114ab53805b4d65c92369ecf7153427ad58c9a"
+    },
+    "at_coverage": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Declare what this connector covers, how it is sourced, and what it does NOT cover.\n\nCall this before telling a user that the law \"does not contain\" something, and whenever\na search comes back empty: the absence may be a gap in this connector rather than in the\nlaw. Every gap carries a fallback saying where to look instead.\n\nReturns:\n    ``Coverage`` with families, an as-of note, and a non-empty list of known gaps.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_coverage",
+        "outputSchema": {
+          "additionalProperties": true,
+          "description": "What this connector covers, how it is sourced, and what it does not cover.",
+          "properties": {
+            "as_of_note": {
+              "description": "States what the dates mean, and what they do not promise.",
+              "type": "string"
+            },
+            "families": {
+              "items": {
+                "additionalProperties": true,
+                "description": "One data family this connector exposes.",
+                "properties": {
+                  "captured_at": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Date this family was last captured (ISO). None when queried live."
+                  },
+                  "live": {
+                    "default": true,
+                    "description": "True when queried live instead of from a snapshot.",
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "description": "Data family, e.g. 'Federal legislation'.",
+                    "type": "string"
+                  },
+                  "source": {
+                    "description": "Official source the data comes from.",
+                    "type": "string"
+                  },
+                  "tool": {
+                    "description": "Tool or tools that reach this family.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "tool",
+                  "source"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "known_gaps": {
+              "description": "Never empty. An empty list would mean 'not checked', not 'no gaps'.",
+              "items": {
+                "additionalProperties": true,
+                "description": "A known, named hole in this connector's coverage - plus the way around it.",
+                "properties": {
+                  "fallback": {
+                    "description": "Where to go instead.",
+                    "type": "string"
+                  },
+                  "family": {
+                    "description": "Which family the gap belongs to.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "Stable gap identifier.",
+                    "type": "string"
+                  },
+                  "missing": {
+                    "description": "What is NOT available through this connector.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "family",
+                  "missing",
+                  "fallback"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "status": {
+              "default": "ok",
+              "enum": [
+                "ok",
+                "degraded",
+                "failed"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "as_of_note"
+          ],
+          "type": "object"
+        }
+      },
+      "sha256": "aa37751f1b9bd1136500a357f067612c7193a77b9ac2200d3ee8e10159d78f6e"
+    },
+    "at_get_case_text": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Fetch the full text of a decision from a RIS content URL.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "content_url": {
+              "description": "an absolute ris.bka.gv.at URL from a case hit's ``content_urls`` (``.html`` or ``.xml``).",
+              "type": "string"
+            },
+            "ecli": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "the hit's ECLI, passed through so the text stays citable."
+            },
+            "human_readable_citation": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "the hit's citation, passed through."
+            }
+          },
+          "required": [
+            "content_url"
+          ],
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_get_case_text",
+        "outputSchema": {
+          "additionalProperties": true,
+          "description": "Result of ``at_get_case_text``.",
+          "properties": {
+            "byte_size": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "content": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "content_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "dataset_note": {
+              "default": "Austrian case law (Judikatur) via RIS. Decisions carry a native ECLI (no ELI). Choose an 'applikation': Justiz (ordinary courts incl. OGH), Vfgh (constitutional), Vwgh (administrative), Bvwg, Lvwg, Dsk, and others. Landesrecht is not yet covered.",
+              "type": "string"
+            },
+            "ecli": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "format": {
+              "enum": [
+                "html",
+                "xml"
+              ],
+              "type": "string"
+            },
+            "human_readable_citation": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "source_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_url",
+            "format"
+          ],
+          "type": "object"
+        }
+      },
+      "sha256": "da9bebaabecec2f8c3fd6479964fa3fa963dbf3a7c4ecfe9c9948f2aa8dfe4a6"
+    },
+    "at_get_text": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Fetch the full text of an act from a RIS content URL.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "content_url": {
+              "description": "an absolute ris.bka.gv.at URL from a search hit's ``content_urls`` (``.html`` or ``.xml``).",
+              "type": "string"
+            },
+            "eli_uri": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "the hit's ELI URL, passed through so the text stays citable."
+            },
+            "human_readable_citation": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "the hit's citation, passed through."
+            }
+          },
+          "required": [
+            "content_url"
+          ],
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_get_text",
+        "outputSchema": {
+          "additionalProperties": true,
+          "description": "Result of ``at_get_text``.",
+          "properties": {
+            "byte_size": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "content": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "content_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "dataset_note": {
+              "default": "This connector exposes Austrian federal law (Bundesrecht, via at_search) and case law (Judikatur, via at_case_search). State law (Landesrecht) is not yet covered.",
+              "type": "string"
+            },
+            "eli_uri": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "format": {
+              "enum": [
+                "html",
+                "xml"
+              ],
+              "type": "string"
+            },
+            "human_readable_citation": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "source_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_url",
+            "format"
+          ],
+          "type": "object"
+        }
+      },
+      "sha256": "7be98652c686cd7fb86362a4225752e0da72b40e2f12b847e310b1e07f1f7740"
+    },
+    "at_list_collections": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "List the RIS collections and which are exposed by this connector.\n\nReturns:\n    List of ``Collection`` (code, name, note).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_list_collections",
+        "outputSchema": {
+          "properties": {
+            "result": {
+              "items": {
+                "additionalProperties": true,
+                "description": "A RIS application/collection (orientation for ``at_list_collections``).",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "note": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  }
+                },
+                "required": [
+                  "code"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "x-fastmcp-wrap-result": true
+        }
+      },
+      "sha256": "b7f2521efc9d898ed707933be55425cc82338f60207535346b8ba4a10df5f81e"
+    },
+    "at_search": {
+      "descriptor": {
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Search Austrian federal law (RIS Bundesrecht).\n\nMaps to ``GET /Bundesrecht``. Each hit gets ``eli_uri``, ``human_readable_citation``,\n``source_url`` and ``content_urls`` (html/xml).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "additionalProperties": true,
+              "description": "``SearchQuery`` - suchworte, titel, page_size (Ten/Twenty/Fifty/OneHundred), page_number.",
+              "properties": {
+                "page_number": {
+                  "default": 1,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "page_size": {
+                  "default": "Ten",
+                  "enum": [
+                    "Ten",
+                    "Twenty",
+                    "Fifty",
+                    "OneHundred"
+                  ],
+                  "type": "string"
+                },
+                "suchworte": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                },
+                "titel": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        },
+        "name": "at_search",
+        "outputSchema": {
+          "additionalProperties": true,
+          "description": "Result of ``at_search``.",
+          "properties": {
+            "dataset_note": {
+              "default": "This connector exposes Austrian federal law (Bundesrecht, via at_search) and case law (Judikatur, via at_case_search). State law (Landesrecht) is not yet covered.",
+              "type": "string"
+            },
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "description": "A flattened Austrian federal-law reference (a search hit).",
+                "properties": {
+                  "applikation": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "bgblnummer": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "content_urls": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "eli_uri": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "human_readable_citation": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "kurztitel": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "organ": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "source_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "titel": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  },
+                  "typ": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "query_echo": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "description": "Arguments for the ``at_search`` tool (RIS Bundesrecht).",
+                  "properties": {
+                    "page_number": {
+                      "default": 1,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "page_size": {
+                      "default": "Ten",
+                      "enum": [
+                        "Ten",
+                        "Twenty",
+                        "Fifty",
+                        "OneHundred"
+                      ],
+                      "type": "string"
+                    },
+                    "suchworte": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null
+                    },
+                    "titel": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "total": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total"
+          ],
+          "type": "object"
+        }
+      },
+      "sha256": "ee565c98f605433fc70354d02d1f732d7fccfaab10552ea1ef23395e818e5cb4"
+    }
+  },
+  "toolset_sha256": "984726e478db9621ba4a8d9cfac922e679a93a144c07f89089c57984426394eb"
+}
