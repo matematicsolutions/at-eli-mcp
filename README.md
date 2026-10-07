@@ -5,6 +5,14 @@
 
 ## Install (one command)
 
+As a Claude plugin (Claude Code or the desktop app, needs [uv](https://docs.astral.sh/uv/));
+see [plugin/README.md](plugin/README.md) for what it sends and stores:
+
+```
+/plugin marketplace add matematicsolutions/at-eli-mcp
+/plugin install at-eli-mcp@at-eli-mcp
+```
+
 Published on PyPI + MCP Registry (`io.github.matematicsolutions/at-eli-mcp`). Run without cloning:
 
 ```bash
@@ -100,7 +108,12 @@ No API key. RIS is keyless Open Government Data.
 
 - **Public data only** - read-only against RIS; no client data leaves the machine beyond search parameters.
 - **Audit log** - every tool call appends one JSON line to `~/.matematic/audit/at-eli-mcp.jsonl`.
-- **Vendor-neutral** - talks only to `data.bka.gv.at` and (for full text) `ris.bka.gv.at`; no LLM provider, no telemetry.
+- **Network** - the server talks to the official source(s) named above and the local
+  filesystem. Once, on first use, it also fetches a small configuration file
+  (`at-runtime.json.gz`, updated source addresses) from this repository's GitHub Releases.
+  That request carries no query content; GitHub's download counter for the file is the only
+  usage signal we see. `AT_ELI_RUNTIME_URL=""` turns it off; the Claude plugin ships
+  with it off. No LLM provider, no other telemetry.
 - **Host-restricted text** - full text is fetched only from `ris.bka.gv.at`.
 
 See `CONSTITUTION.md` and `DISCOVERY.md`.

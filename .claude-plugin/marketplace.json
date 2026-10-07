@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-plugin-marketplace.json",
+  "name": "at-eli-mcp",
+  "description": "One plugin: Austrian law with verifiable citations.",
+  "owner": {
+    "name": "Wieslaw Mazur / MateMatic Solutions",
+    "url": "https://matematicsolutions.com"
+  },
+  "plugins": [
+    {
+      "name": "at-eli-mcp",
+      "description": "Austrian federal legislation (ELI) and court decisions (ECLI) from RIS, with official sources.",
+      "version": "0.4.3",
+      "author": {
+        "name": "Wieslaw Mazur / MateMatic Solutions"
+      },
+      "license": "Apache-2.0",
+      "source": "./plugin"
+    }
+  ]
+}
